@@ -2,6 +2,21 @@
     font-size: 48px;
 }
 
-/*#firstpic {
-    size: 50%;
-}*/
+#service {
+    margin-top: 50px;
+}
+
+#service h3 {
+    text-align: center;
+    margin-bottom:  50px;
+    padding-top:    90px;
+}
+
+#headerwrap {
+    margin-bottom: -70px;
+}
+
+#portfoliowrap h3 {
+    margin-top:  -50px;
+    padding-top:    90px;
+}
