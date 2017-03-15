@@ -36,10 +36,9 @@
 
 .egemap {
     /*display:block;*/
-    /*width:750px;*/
     height:750px;
-/*    margin-top: 90%;
-    margin-bottom:  90%;
-    margin-left:  90%;
-    margin-right:  90%;*/
+    margin-top: 5%;
+    margin-bottom:  5%;
+    margin-left:  5%;
+    margin-right:  5%;
 }
