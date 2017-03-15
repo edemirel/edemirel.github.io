@@ -8,8 +8,8 @@
 
 #service h3 {
     text-align: center;
-    margin-bottom:  50px;
-    padding-top:    90px;
+    margin-bottom: 50px;
+    padding-top: 90px;
 }
 
 #headerwrap {
@@ -17,6 +17,29 @@
 }
 
 #portfoliowrap h3 {
-    margin-top:  -50px;
-    padding-top:    90px;
+    margin-top: -50px;
+    padding-top: 90px;
+    margin-bottom: 50px;
+}
+
+#mapwrap {
+    text-align: center;
+    margin-top: -50px;
+    padding-top: 90px;
+}
+
+#mapwrap h3 {
+    margin-top: -50px;
+    padding-top: 90px;
+    /*margin-bottom: 50px;*/
+}
+
+.egemap {
+    /*display:block;*/
+    /*width:750px;*/
+    height:750px;
+/*    margin-top: 90%;
+    margin-bottom:  90%;
+    margin-left:  90%;
+    margin-right:  90%;*/
 }
