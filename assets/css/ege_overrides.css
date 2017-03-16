@@ -37,8 +37,13 @@
 .egemap {
     /*display:block;*/
     height:750px;
-    margin-top: 5%;
-    margin-bottom:  5%;
-    margin-left:  5%;
-    margin-right:  5%;
+    /*width: 90%;*/
+    padding-top: 10px;
+    padding-bottom:  10px;
+    padding-left:  10px;
+    padding-right:  10px;
+}
+
+#currency_rate {
+    display:inline;
 }
