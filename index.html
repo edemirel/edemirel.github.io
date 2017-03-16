@@ -9,7 +9,6 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
     <link rel="stylesheet" href="assets/css/leaflet.css" />
-
     <title>Yağcı - Demirel Wedding</title>
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -24,7 +23,8 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    {# <script src="assets/js/modernizr.js"></script> #}
+    {#
+    <script src="assets/js/modernizr.js"></script> #}
 </head>
 
 <body>
@@ -301,7 +301,6 @@
                 <h4> Izmir Map </h4>
                 <div id="izmir_map" class="egemap"></div>
             </div>
-
         </div>
         <!-- portfolio container -->
     </div>
@@ -436,8 +435,6 @@
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/leaflet.js"></script>
     <script src="assets/js/money.js"></script>
-    <script src="assets/js/map_stuff.js"></script>
-
     <script>
     // Portfolio
     (function($) {
@@ -521,14 +518,43 @@
     })(jQuery);
     </script>
     <script type="text/javascript">
-        var everythingLoaded = setInterval(function() {
-      if (/loaded|complete/.test(document.readyState)) {
-        clearInterval(everythingLoaded);
-        document.getElementById("currency_rate").innerHTML = fx.convert(1, {from: 'USD', to: 'TRY'});
-      }
-    }, 10);
+    $(document).ready(function() {
+        // Load exchange rates data via AJAX:
+        fx.base = "USD";
+        fx.settings = {
+            from: "USD"
+        };
+        $.getJSON(
+            // NB: using Open Exchange Rates here, but you can use any source!
+            'https://openexchangerates.org/api/latest.json?app_id=08b19e818638431dae6438a312ed57f8',
+            function(data) {
+                // Check money.js has finished loading:
+                if (typeof fx !== "undefined" && fx.rates) {
+                    fx.rates = data.rates;
+                    fx.base = data.base;
+                } else {
+                    // If not, apply to fxSetup global:
+                    var fxSetup = {
+                        rates: data.rates,
+                        base: data.base
+                    }
+                }
+            }
+        );
 
+        document.getElementById("currency_rate").innerHTML = fx.convert(1, {
+            from: 'USD',
+            to: 'TRY'
+        });
+    });
+    //     var everythingLoaded = setInterval(function() {
+    //   if (/loaded|complete/.test(document.readyState)) {
+    //     clearInterval(everythingLoaded);
+    //     document.getElementById("currency_rate").innerHTML = fx.convert(1, {from: 'USD', to: 'TRY'});
+    //   }
+    // }, 10);
     </script>
+    <script src="assets/js/map_stuff.js"></script>
 </body>
 
 </html>

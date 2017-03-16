@@ -2,25 +2,6 @@ var gen_map = L.map('general_map').setView([38.39172, 27.08473], 10);
 var izm_map = L.map('izmir_map').setView([38.30018, 27.15285], 15);
 
 
-// Load exchange rates data via AJAX:
-$.getJSON(
-    // NB: using Open Exchange Rates here, but you can use any source!
-    'https://openexchangerates.org/api/latest.json?app_id=08b19e818638431dae6438a312ed57f8',
-    function(data) {
-        // Check money.js has finished loading:
-        if ( typeof fx !== "undefined" && fx.rates ) {
-            fx.rates = data.rates;
-            fx.base = data.base;
-        } else {
-            // If not, apply to fxSetup global:
-            var fxSetup = {
-                rates : data.rates,
-                base : data.base
-            }
-        }
-    }
-);
-
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(gen_map);
