@@ -1,18 +1,17 @@
 var gen_map = L.map('general_map').setView([38.39172, 27.08473], 10);
-var izm_map = L.map('izmir_map').setView([38.30018, 27.15285], 15);
+var izm_map = L.map('izmir_map').setView([38.30018, 27.15285], 12);
 
 
 L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(gen_map);
 L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(izm_map);
 // L.tileLayer('https://a.tiles.mapbox.com/v3/mapbox.world-bright/{z}/{x}/{y}.png').addTo(map);
 
 L.marker([38.300183, 27.152850]).addTo(gen_map)
-    .bindPopup('Airport')
-    .openPopup();;
+    .bindPopup('Airport').openPopup();;
 // L.marker([38.43437, 27.14287]).addTo(map)
 //     .bindPopup("Ege's Dad's Hospital for Emergencies");
 L.marker([38.41858, 27.12933]).addTo(gen_map)
@@ -35,5 +34,6 @@ function onMapClick(e) {
 }
 
 gen_map.on('click', onMapClick);
+izm_map.on('click', onMapClick);
 
 
