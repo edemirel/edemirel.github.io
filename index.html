@@ -25,7 +25,7 @@
     <![endif]-->
     {#
     <script src="assets/js/modernizr.js"></script> #}
-    </head>
+</head>
 
 <body>
     <!-- Fixed navbar -->
@@ -417,11 +417,11 @@
                     </p>
                 </div>
             </div>
-            <! --/row -->
+            <!--/row -->
         </div>
-        <! --/container -->
+        <!--/container -->
     </div>
-    <! --/footerwrap -->
+    <!--/footerwrap -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -433,9 +433,14 @@
     <script src="assets/js/jquery.prettyPhoto.js"></script>
     <script src="assets/js/jquery.isotope.min.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script>L_PREFER_CANVAS = true;</script>
+    <script>
+    L_PREFER_CANVAS = true;
+    </script>
     <script src="assets/js/leaflet.js"></script>
     <script src="assets/js/money.js"></script>
+    <script>
+    console.log("i was loaded");
+    </script>
     <script>
     // Portfolio
     (function($) {
@@ -521,7 +526,7 @@
     <script type="text/javascript">
     $(document).ready(function() {
         // Load exchange rates data via AJAX:
-        fx.base = "USD";
+        // fx.base = "USD";
         fx.settings = {
             from: "USD"
         };
@@ -540,13 +545,13 @@
                         base: data.base
                     }
                 }
+                document.getElementById("currency_rate").innerHTML = fx.convert(1, {
+                    from: "USD",
+                    to: "TRY"
+                });
             }
         );
 
-        document.getElementById("currency_rate").innerHTML = fx.convert(1, {
-            from: 'USD',
-            to: 'TRY'
-        });
     });
     //     var everythingLoaded = setInterval(function() {
     //   if (/loaded|complete/.test(document.readyState)) {

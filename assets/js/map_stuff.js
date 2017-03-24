@@ -1,5 +1,5 @@
 var gen_map = L.map('general_map').setView([38.39172, 27.08473], 10);
-var izm_map = L.map('izmir_map').setView([38.30018, 27.15285], 12);
+var izm_map = L.map('izmir_map').setView([38.42844, 27.14484], 14);
 
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
